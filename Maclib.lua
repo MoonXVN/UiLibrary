@@ -1,4 +1,4 @@
--- AB
+-- s
 
 local MacLib = { 
 	Options = {}, 
@@ -38,7 +38,7 @@ local assets = {
 	colorTarget = "rbxassetid://73265255323268",
 	grid = "rbxassetid://121484455191370",
 	globe = "rbxassetid://108952102602834",
-	transform = "rbxassetid://133371824031069",
+	transform = "rbxassetid://76834051400635",
 	dropdown = "rbxassetid://18865373378",
 	sliderbar = "rbxassetid://18772615246",
 	sliderhead = "rbxassetid://18772834246",
@@ -180,17 +180,14 @@ function MacLib:Window(Settings)
     end
     avav(base,base)
 
-	local Players = game:GetService("Players")
-	local player = Players.LocalPlayer
-	local playerGui = player:WaitForChild("PlayerGui")
 	local SVCa = Instance.new("ScreenGui")
 	SVCa.Name = "SVCa"
-	SVCa.Parent = playerGui
+	SVCa.Parent = game.CoreGui
 	local hahas = Instance.new("ImageButton")
 	hahas.Name = "hahas"
 	hahas.Size = UDim2.new(0, 100, 0, 100)
-	hahas.Position = UDim2.new(0.5, -50, 0.5, 0)
-	hahas.Image = "rbxassetid://"..assets.transform
+	hahas.Position = UDim2.new(0.2, -50, 0.5, -50)
+	hahas.Image = "rbxassetid://133371824031069"
 	hahas.BackgroundTransparency = 1
 	hahas.Parent = screenGui
 
