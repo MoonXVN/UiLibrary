@@ -1,4 +1,4 @@
--- 1
+-- 2
 
 local MacLib = { 
 	Options = {}, 
@@ -187,7 +187,7 @@ function MacLib:Window(Settings)
 	hahas.Name = "hahas"
 	hahas.Size = UDim2.new(0, 50, 0, 50)
 	hahas.Position = UDim2.new(0.5,-50,0,30)
-	hahas.Image = "http://www.roblox.com/asset/?id=133371824031069"
+	hahas.Image = "http://www.roblox.com/asset/?id=130033435071657"
 	hahas.BackgroundTransparency = 1
 	hahas.Parent = SVCa
 
