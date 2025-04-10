@@ -1,4 +1,4 @@
--- s
+-- 1
 
 local MacLib = { 
 	Options = {}, 
@@ -185,17 +185,17 @@ function MacLib:Window(Settings)
 	SVCa.Parent = game.CoreGui
 	local hahas = Instance.new("ImageButton")
 	hahas.Name = "hahas"
-	hahas.Size = UDim2.new(0, 100, 0, 100)
-	hahas.Position = UDim2.new(0.2, -50, 0.5, -50)
-	hahas.Image = "rbxassetid://133371824031069"
+	hahas.Size = UDim2.new(0, 50, 0, 50)
+	hahas.Position = UDim2.new(0.5,-50,0,30)
+	hahas.Image = "http://www.roblox.com/asset/?id=133371824031069"
 	hahas.BackgroundTransparency = 1
-	hahas.Parent = screenGui
+	hahas.Parent = SVCa
 
 	hahas.MouseButton1Click:Connect(function()
 		game:GetService("VirtualInputManager"):SendKeyEvent(true,Settings.Keybind,false,game)
 		game:GetService("VirtualInputManager"):SendKeyEvent(false,Settings.Keybind,false,game)
 	end)
-	
+	avav(hahas,hahas)
 	local baseUIScale = Instance.new("UIScale")
 	baseUIScale.Name = "BaseUIScale"
 	baseUIScale.Parent = base
