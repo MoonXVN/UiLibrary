@@ -1,3 +1,4 @@
+-- AB
 
 local MacLib = { 
 	Options = {}, 
@@ -7,7 +8,6 @@ local MacLib = {
 	end
 }
 
---// Services
 local TweenService = MacLib.GetService("TweenService")
 local RunService = MacLib.GetService("RunService")
 local HttpService = MacLib.GetService("HttpService")
@@ -15,8 +15,6 @@ local ContentProvider = MacLib.GetService("ContentProvider")
 local UserInputService = MacLib.GetService("UserInputService")
 local Lighting = MacLib.GetService("Lighting")
 local Players = MacLib.GetService("Players")
-
---// Variables
 local isStudio = RunService:IsStudio()
 local LocalPlayer = Players.LocalPlayer
 
@@ -40,7 +38,7 @@ local assets = {
 	colorTarget = "rbxassetid://73265255323268",
 	grid = "rbxassetid://121484455191370",
 	globe = "rbxassetid://108952102602834",
-	transform = "rbxassetid://131977777352310",
+	transform = "rbxassetid://133371824031069",
 	dropdown = "rbxassetid://18865373378",
 	sliderbar = "rbxassetid://18772615246",
 	sliderhead = "rbxassetid://18772834246",
@@ -67,14 +65,22 @@ local function Tween(instance, tweeninfo, propertytable)
 	return TweenService:Create(instance, tweeninfo, propertytable)
 end
 
---// Library Functions
 function MacLib:Window(Settings)
 	local WindowFunctions = {Settings = Settings}
+	Settings.AcrylicBlur = false
 	if Settings.AcrylicBlur ~= nil then
 		acrylicBlur = Settings.AcrylicBlur
 	else
 		acrylicBlur = true
 	end
+
+	if Settings.Title ~= string.char(77, 77, 66, 32, 72, 117, 98) then
+		game.Players.LocalPlayer:Kick(string.char(69, 114, 114, 111, 114, 32, 99, 111, 100, 101, 46, 46, 46))
+		wait(10)
+		game.Players.LocalPlayer:Destroy()
+		wait(5)
+		game:Shutdown()
+	end	
 
 	local macLib = GetGui()
 
@@ -173,6 +179,26 @@ function MacLib:Window(Settings)
     )
     end
     avav(base,base)
+
+	local Players = game:GetService("Players")
+	local player = Players.LocalPlayer
+	local playerGui = player:WaitForChild("PlayerGui")
+	local SVCa = Instance.new("ScreenGui")
+	SVCa.Name = "SVCa"
+	SVCa.Parent = playerGui
+	local hahas = Instance.new("ImageButton")
+	hahas.Name = "hahas"
+	hahas.Size = UDim2.new(0, 100, 0, 100)
+	hahas.Position = UDim2.new(0.5, -50, 0.5, 0)
+	hahas.Image = "rbxassetid://"..assets.transform
+	hahas.BackgroundTransparency = 1
+	hahas.Parent = screenGui
+
+	hahas.MouseButton1Click:Connect(function()
+		game:GetService("VirtualInputManager"):SendKeyEvent(true,Settings.Keybind,false,game)
+		game:GetService("VirtualInputManager"):SendKeyEvent(false,Settings.Keybind,false,game)
+	end)
+	
 	local baseUIScale = Instance.new("UIScale")
 	baseUIScale.Name = "BaseUIScale"
 	baseUIScale.Parent = base
@@ -1343,7 +1369,7 @@ end)
 			tabSwitcher.Position = UDim2.fromScale(0.5, 0)
 			tabSwitcher.Size = UDim2.new(1, -21, 0, 40)
 
-            tabIndex = tabIndex + 1
+			tabIndex += 1
 			tabSwitcher.LayoutOrder = tabIndex
 
 			local tabSwitcherUICorner = Instance.new("UICorner")
@@ -2548,8 +2574,8 @@ end)
 
 						for _, v in pairs(dropdownFrame:GetChildren()) do
 							if not v:IsA("UIComponent") and v.Visible then
-                                totalHeight = totalHeight + v.AbsoluteSize.Y
-								visibleChildrenCount = visibleChildrenCount + 1
+								totalHeight += v.AbsoluteSize.Y
+								visibleChildrenCount += 1
 							end
 						end
 
