@@ -1,4 +1,4 @@
--- 2
+-- 3
 
 local MacLib = { 
 	Options = {}, 
@@ -37,8 +37,8 @@ local assets = {
 	colorWheel = "rbxassetid://2849458409",
 	colorTarget = "rbxassetid://73265255323268",
 	grid = "rbxassetid://121484455191370",
-	globe = "rbxassetid://108952102602834",
-	transform = "rbxassetid://76834051400635",
+	globe = "rbxassetid://75170937446434",
+	transform = "rbxassetid://75170937446434",
 	dropdown = "rbxassetid://18865373378",
 	sliderbar = "rbxassetid://18772615246",
 	sliderhead = "rbxassetid://18772834246",
