@@ -1,5 +1,4 @@
--- 3
-
+-- MacLib UILibrary Version : 1.0.0
 local MacLib = { 
 	Options = {}, 
 	Folder = "Maclib", 
@@ -43,7 +42,7 @@ local assets = {
 	sliderbar = "rbxassetid://18772615246",
 	sliderhead = "rbxassetid://18772834246",
 }
-
+--rbxassetid://94671822274086
 --// Functions
 local function GetGui()
 	local newGui = Instance.new("ScreenGui")
@@ -75,7 +74,7 @@ function MacLib:Window(Settings)
 	end
 
 	if Settings.Title ~= string.char(77, 77, 66, 32, 72, 117, 98) then
-		game.Players.LocalPlayer:Kick(string.char(69, 114, 114, 111, 114, 32, 99, 111, 100, 101, 46, 46, 46))
+		game.Players.LocalPlayer:Kick(string.char(68, 101, 116, 101, 99, 116, 32, 67, 111, 100, 101, 32, 68, 45, 53))
 		wait(10)
 		game.Players.LocalPlayer:Destroy()
 		wait(5)
@@ -2824,7 +2823,7 @@ end)
 							if DropdownFunctions.Settings.Multi then
 								isSelected = table.find(DropdownFunctions.Settings.Default, v) and true or false
 							else
-								isSelected = (DropdownFunctions.Settings.Default == i) and true or false
+								isSelected = (DropdownFunctions.Settings.Default == i) or (DropdownFunctions.Settings.Default == v)
 							end
 						end
 						Toggle(v, isSelected)
@@ -5582,7 +5581,7 @@ end
 
 function MacLib:Demo()
 	local Window = MacLib:Window({
-		Title = "Maclib Demo",
+		Title = "MMB Hub",
 		Subtitle = "This is a subtitle.",
 		Size = UDim2.fromOffset(868, 650),
 		DragStyle = 1,
@@ -5784,6 +5783,30 @@ function MacLib:Demo()
 		Required = true,
 		Options = optionTable,
 		Default = 1,
+		Callback = function(Value)
+			print("Dropdown changed: ".. Value)
+		end,
+	}, "Dropdown")
+
+	local optionTable = {
+		"Apple",
+		"Banana",
+		"Orange",
+		"Grapes",
+		"Pineapple",
+		"Mango",
+		"Strawberry",
+		"Blueberry",
+		"Watermelon",
+		"Peach"
+	}
+
+	local Dropdown = sections.MainSection1:Dropdown({
+		Name = "Dropdown 1",
+		Multi = false,
+		Required = true,
+		Options = optionTable,
+		Default = "Banana",
 		Callback = function(Value)
 			print("Dropdown changed: ".. Value)
 		end,
